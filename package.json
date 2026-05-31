@@ -45,7 +45,7 @@
     "grammars": [
       {
         "language": "logos",
-        "scopeName": "source.logos",
+        "scopeName": "source.logosml",
         "path": "./logos.tmLanguage.json"
       }
     ]

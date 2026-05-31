@@ -4,7 +4,7 @@ const grammar = JSON.parse(fs.readFileSync("logos.tmLanguage.json", "utf8"));
 
 const required = [
   ["name", "Logos"],
-  ["scopeName", "source.logos"]
+  ["scopeName", "source.logosml"]
 ];
 
 for (const [key, expected] of required) {

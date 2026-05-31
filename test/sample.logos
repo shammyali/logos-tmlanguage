@@ -1,4 +1,4 @@
--- SYNTAX TEST "source.logos" "Vryx parser common sample"
+-- SYNTAX TEST "source.logosml" "Vryx parser common sample"
 module vryx.canvas.parsers.common
 
 pub type StringList =

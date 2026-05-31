@@ -2,7 +2,7 @@
 
 TextMate grammar for Logos, the ML-family programming language built by Logos Technologies.
 
-This package gives editors a stable `source.logos` grammar for `.logos` files. It is usable by VS Code, Sublime Text, Atom-compatible grammar loaders, Zed, and GitHub Linguist.
+This package gives editors a stable `source.logosml` grammar for `.logos` files. It is usable by VS Code, Sublime Text, Atom-compatible grammar loaders, Zed, and GitHub Linguist.
 
 ## Files
 
@@ -22,7 +22,7 @@ The test command validates the grammar JSON and runs TextMate snapshot tests ove
 ## Language
 
 - Compiler: https://github.com/shammyali/logos
-- Scope: `source.logos`
+- Scope: `source.logosml`
 - Extension: `.logos`
 
 ## License
