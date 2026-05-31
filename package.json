@@ -1,0 +1,53 @@
+{
+  "name": "logos-tmlanguage",
+  "version": "0.1.0",
+  "description": "TextMate grammar for the Logos programming language.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Logos-Language/logos-tmlanguage.git"
+  },
+  "contributors": [
+    {
+      "name": "Logos Technologies LLC"
+    },
+    {
+      "name": "GPT-5",
+      "email": "noreply@openai.com"
+    }
+  ],
+  "files": [
+    "logos.tmLanguage.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate-grammar.mjs",
+    "snap": "vscode-tmgrammar-snap 'test/sample.logos'",
+    "test": "npm run validate && vscode-tmgrammar-test 'test/sample.logos' && vscode-tmgrammar-snap 'test/sample.logos'"
+  },
+  "devDependencies": {
+    "vscode-tmgrammar-test": "^0.1.3"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "logos",
+        "aliases": [
+          "Logos",
+          "logos"
+        ],
+        "extensions": [
+          ".logos"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "logos",
+        "scopeName": "source.logos",
+        "path": "./logos.tmLanguage.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Logos",
+  "scopeName": "source.logos",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#function-definitions"
+    },
+    {
+      "include": "#record-fields"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.logos",
+          "match": "--.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.logos",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.logos",
+              "match": "\\\\(?:[\\\\\"ntr])"
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.logos",
+          "match": "\\b(?:if|then|else|let|in|match|with|where)\\b"
+        },
+        {
+          "name": "keyword.declaration.logos",
+          "match": "\\b(?:module|import|pub|type|record|extern|assert)\\b"
+        },
+        {
+          "name": "constant.language.boolean.logos",
+          "match": "\\b(?:true|false)\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.type.builtin.logos",
+          "match": "\\b(?:String|Int|Bool)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.logos",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "function-definitions": {
+      "patterns": [
+        {
+          "name": "meta.function.definition.logos",
+          "match": "\\b(pub\\s+)?([a-z_][a-zA-Z0-9_]*)(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.logos"
+            },
+            "2": {
+              "name": "entity.name.function.logos"
+            }
+          }
+        },
+        {
+          "name": "meta.let.binding.logos",
+          "match": "\\b(let)\\s+([a-z_][a-zA-Z0-9_]*)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.control.logos"
+            },
+            "2": {
+              "name": "entity.name.function.logos"
+            }
+          }
+        }
+      ]
+    },
+    "record-fields": {
+      "patterns": [
+        {
+          "name": "variable.other.member.logos",
+          "match": "(?<=\\.)[a-z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "entity.name.type.logos",
+          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logos",
+          "match": "->|=>|==|!=|<=|>=|&&|\\|\\||::|[<>|+\\-*/=]"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.section.braces.logos",
+          "match": "[{}]"
+        },
+        {
+          "name": "punctuation.section.parens.logos",
+          "match": "[()]"
+        },
+        {
+          "name": "punctuation.section.brackets.logos",
+          "match": "[\\[\\]]"
+        },
+        {
+          "name": "punctuation.separator.logos",
+          "match": "[;,.]"
+        }
+      ]
+    }
+  }
+}
